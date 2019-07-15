@@ -5,7 +5,7 @@ HELM_HOME ?= $(shell helm home)
 HELM_PLUGIN_DIR ?= $(HELM_HOME)/plugins/helm-unittest
 VERSION := $(shell sed -n -e 's/version:[ "]*\([^"]*\).*/\1/p' plugin.yaml)
 DIST := $(CURDIR)/_dist
-LDFLAGS := "-X main.version=${VERSION} -extldflags '-static'"
+LDFLAGS := "-X 'main.version=${VERSION}' -extldflags '-static'"
 DOCKER ?= "ci/helm-unittest"
 
 .PHONY: install

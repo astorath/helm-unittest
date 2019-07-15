@@ -3,6 +3,8 @@ import (
 	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest"
 )
 
+var version string
+
 func main() {
-	unittest.Execute()
+	unittest.Execute(version)
 }

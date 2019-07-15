@@ -69,7 +69,8 @@ details about how to write tests.
 }
 
 // Execute execute unittest command
-func Execute() {
+func Execute(version string) {
+	cmd.Version = version
 	if err := cmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

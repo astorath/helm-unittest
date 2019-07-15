@@ -3,7 +3,7 @@ RUN apk --no-cache add --quiet alpine-sdk=1.0-r0
 
 ENV GO111MODULE=on
 
-WORKDIR /go/src/gitlab.3adigital.ru/gitlab-ci/helm-unittest/
+WORKDIR /go/src/github.com/lrills/helm-unittest/
 COPY go.mod go.sum Makefile ./
 RUN make deps
 

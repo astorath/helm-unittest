@@ -8,20 +8,11 @@ jobs:
       GO111MODULE: "on"
     steps:
       - checkout
-      # - run:
-      #     name: Get dep
-      #     command: |
-      #       curl -o install-dep.sh https://raw.githubusercontent.com/golang/dep/master/install.sh
-      #       chmod +x install-dep.sh
-      #       ./install-dep.sh
       - restore_cache:
           keys:
             - helm-unittest-deps-{{ .Branch }}-{{ checksum "go.sum" }}
             - helm-unittest-deps-{{ .Branch }}-
             - helm-unittest-deps-
-      # - run:
-      #     name: Check dep status
-      #     command: dep status -v
       - run:
           name: Download deps
           command: make deps

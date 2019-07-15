@@ -3,8 +3,8 @@ package validators
 import (
 	"reflect"
 
-	"github.com/lrills/helm-unittest/unittest/common"
-	"github.com/lrills/helm-unittest/unittest/valueutils"
+	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/common"
+	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/valueutils"
 )
 
 // EqualValidator validate whether the value of Path equal to Value

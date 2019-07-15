@@ -1,9 +1,9 @@
-module github.com/lrills/helm-unittest
+module gitlab.3adigital.ru/gitlab-ci/helm-unittest
 
 require (
 	github.com/Masterminds/goutils v1.1.0 // indirect
 	github.com/Masterminds/semver v1.4.2 // indirect
-	github.com/Masterminds/sprig v2.20.0+incompatible // indirect
+	github.com/Masterminds/sprig v2.18.1-0.20190301161902-9f8fceff796f+incompatible // indirect; 2.19.0
 	github.com/bradleyjkemp/cupaloy/v2 v2.4.0
 	github.com/cyphar/filepath-securejoin v0.2.2 // indirect
 	github.com/fatih/color v1.7.0
@@ -21,8 +21,7 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/stretchr/testify v1.3.0
 	golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c // indirect
-	golang.org/x/sys v0.0.0-20190402142545-baf5eb976a8c // indirect
 	gopkg.in/yaml.v2 v2.2.2
-	k8s.io/apimachinery v0.0.0-20190612205821-1799e75a0719 // indirect; kubernetes-1.15.0
+	k8s.io/apimachinery v0.0.0-20190404173353-6a84e37a896d // indirect; kubernetes-1.14.1
 	k8s.io/helm v2.14.2+incompatible
 )

@@ -1,7 +1,6 @@
-package main // github.com/lrills/helm-unittest
-// gitlab.3adigital.ru/gitlab-ci/helm-unittest
+package main // gitlab.3adigital.ru/gitlab-ci/helm-unittest
 import (
-	"github.com/lrills/helm-unittest/unittest"
+	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest"
 )
 
 func main() {

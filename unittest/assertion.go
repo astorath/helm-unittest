@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/lrills/helm-unittest/unittest/common"
-	"github.com/lrills/helm-unittest/unittest/validators"
+	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/common"
+	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/validators"
 
 	"github.com/mitchellh/mapstructure"
 )

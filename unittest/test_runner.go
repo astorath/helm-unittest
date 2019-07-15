@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/lrills/helm-unittest/unittest/snapshot"
+	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/snapshot"
 	"k8s.io/helm/pkg/chartutil"
 	"k8s.io/helm/pkg/proto/hapi/chart"
 )

@@ -2,29 +2,10 @@
 
 # borrowed from https://github.com/technosophos/helm-template
 
-# echo HELM_PLUGIN_NAME=$HELM_PLUGIN_NAME
-# echo HELM_PLUGIN_DIR=$HELM_PLUGIN_DIR
-# echo HELM_PLUGIN=$HELM_PLUGIN
-# echo HELM_HOME=$HELM_HOME
-# echo HELM_PATH_REPOSITORY=$HELM_PATH_REPOSITORY
-# echo HELM_PATH_REPOSITORY_FILE=$HELM_PATH_REPOSITORY_FILE
-# echo HELM_PATH_CACHE=$HELM_PATH_CACHE
-# echo HELM_PATH_LOCAL_REPOSITORY=$HELM_PATH_LOCAL_REPOSITORY
-# echo HELM_BIN=$HELM_BIN
-
-export | grep "HELM_"
-
-echo "test:"
-printf '%s\n' "$@"
-
-exit 1
-
 PROJECT_NAME="helm-unittest"
-PROJECT_GH="lrills/$PROJECT_NAME"
+PROJECT_GH="astorath/$PROJECT_NAME"
 
-HELM_PLUGIN_PATH=${HELM_PLUGIN_DIR}
-
-# : ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-unittest"}
+: ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-unittest"}
 
 # Convert the HELM_PLUGIN_PATH to unix if cygpath is
 # available. This is the case when using MSYS2 or Cygwin
@@ -34,7 +15,7 @@ if type cygpath &> /dev/null; then
   HELM_PLUGIN_PATH=$(cygpath -u $HELM_PLUGIN_PATH)
 fi
 
-if [[ "${SKIP_BIN_INSTALL}" == "1" ]]; then
+if [[ $SKIP_BIN_INSTALL == "1" ]]; then
   echo "Skipping binary install"
   exit
 fi

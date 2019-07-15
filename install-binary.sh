@@ -14,7 +14,7 @@
 
 export | grep "HELM_"
 
-git remote 
+printf '%s\n' "$@"
 
 exit 1
 

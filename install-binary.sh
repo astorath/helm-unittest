@@ -14,6 +14,7 @@
 
 export | grep "HELM_"
 
+echo "test:"
 printf '%s\n' "$@"
 
 exit 1

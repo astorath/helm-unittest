@@ -48,7 +48,7 @@ jobs:
           command: make dist
       - run:
           name: Upload binaries
-          command: ghr -u $CIRCLE_USERNAME $CIRCLE_TAG _dist
+          command: ghr -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} $CIRCLE_TAG _dist/
 
 workflows:
   version: 2

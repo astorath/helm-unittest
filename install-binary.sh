@@ -14,6 +14,8 @@
 
 export | grep "HELM_"
 
+git remote 
+
 exit 1
 
 PROJECT_NAME="helm-unittest"

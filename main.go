@@ -1,6 +1,6 @@
-package main // gitlab.3adigital.ru/gitlab-ci/helm-unittest
+package main // github.com/lrills/helm-unittest
 import (
-	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest"
+	"github.com/lrills/helm-unittest/unittest"
 )
 
 var version string

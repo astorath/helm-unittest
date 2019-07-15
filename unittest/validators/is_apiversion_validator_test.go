@@ -3,8 +3,8 @@ package validators_test
 import (
 	"testing"
 
-	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/common"
-	. "gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/validators"
+	"github.com/lrills/helm-unittest/unittest/common"
+	. "github.com/lrills/helm-unittest/unittest/validators"
 	"github.com/stretchr/testify/assert"
 )
 

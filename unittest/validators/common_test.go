@@ -1,7 +1,7 @@
 package validators_test
 
 import (
-	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/common"
+	"github.com/lrills/helm-unittest/unittest/common"
 	yaml "gopkg.in/yaml.v2"
 )
 

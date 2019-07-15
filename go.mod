@@ -1,4 +1,4 @@
-module gitlab.3adigital.ru/gitlab-ci/helm-unittest
+module github.com/lrills/helm-unittest
 
 require (
 	github.com/Masterminds/goutils v1.1.0 // indirect

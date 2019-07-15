@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	. "gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/snapshot"
+	. "github.com/lrills/helm-unittest/unittest/snapshot"
 	"github.com/stretchr/testify/assert"
 )
 

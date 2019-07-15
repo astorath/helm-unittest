@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/common"
-	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/valueutils"
+	"github.com/lrills/helm-unittest/unittest/common"
+	"github.com/lrills/helm-unittest/unittest/valueutils"
 	yaml "gopkg.in/yaml.v2"
 )
 

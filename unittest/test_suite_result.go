@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"gitlab.3adigital.ru/gitlab-ci/helm-unittest/unittest/snapshot"
+	"github.com/lrills/helm-unittest/unittest/snapshot"
 )
 
 // TestSuiteResult result return by TestSuite.Run

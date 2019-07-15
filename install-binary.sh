@@ -2,10 +2,24 @@
 
 # borrowed from https://github.com/technosophos/helm-template
 
+echo HELM_PLUGIN_NAME=$HELM_PLUGIN_NAME
+echo HELM_PLUGIN_DIR=$HELM_PLUGIN_DIR
+echo HELM_PLUGIN=$HELM_PLUGIN
+echo HELM_HOME=$HELM_HOME
+echo HELM_PATH_REPOSITORY=$HELM_PATH_REPOSITORY
+echo HELM_PATH_REPOSITORY_FILE=$HELM_PATH_REPOSITORY_FILE
+echo HELM_PATH_CACHE=$HELM_PATH_CACHE
+echo HELM_PATH_LOCAL_REPOSITORY=$HELM_PATH_LOCAL_REPOSITORY
+echo HELM_BIN=$HELM_BIN
+
+exit 1
+
 PROJECT_NAME="helm-unittest"
 PROJECT_GH="lrills/$PROJECT_NAME"
 
-: ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-unittest"}
+HELM_PLUGIN_PATH=${HELM_PLUGIN_DIR}
+
+# : ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-unittest"}
 
 # Convert the HELM_PLUGIN_PATH to unix if cygpath is
 # available. This is the case when using MSYS2 or Cygwin
@@ -15,7 +29,7 @@ if type cygpath &> /dev/null; then
   HELM_PLUGIN_PATH=$(cygpath -u $HELM_PLUGIN_PATH)
 fi
 
-if [[ $SKIP_BIN_INSTALL == "1" ]]; then
+if [[ "${SKIP_BIN_INSTALL}" == "1" ]]; then
   echo "Skipping binary install"
   exit
 fi
@@ -96,7 +110,7 @@ installFile() {
   HELM_TMP="/tmp/$PROJECT_NAME"
   mkdir -p "$HELM_TMP"
   tar xf "$PLUGIN_TMP_FILE" -C "$HELM_TMP"
-  HELM_TMP_BIN="$HELM_TMP/untt"
+  HELM_TMP_BIN="$HELM_TMP/helm-unittest"
   echo "Preparing to install into ${HELM_PLUGIN_PATH}"
   # Use * to also copy the file withe the exe suffix on Windows
   cp "$HELM_TMP_BIN"* "$HELM_PLUGIN_PATH"
@@ -118,7 +132,7 @@ testVersion() {
   # To avoid to keep track of the Windows suffix,
   # call the plugin assuming it is in the PATH
   PATH=$PATH:$HELM_PLUGIN_PATH
-  untt -h
+  helm-unittest -h
 }
 
 # Execution

@@ -4,9 +4,10 @@
 HELM_HOME ?= $(shell helm home)
 HELM_PLUGIN_DIR ?= $(HELM_HOME)/plugins/helm-unittest
 VERSION := $(shell sed -n -e 's/version:[ "]*\([^"]*\).*/\1/p' plugin.yaml)
+GIT_VERSION ?= $(CIRCLE_TAG)
 DIST := $(CURDIR)/_dist
 LDFLAGS := "-X 'main.version=${VERSION}' -extldflags '-static'"
-DOCKER ?= "ci/helm-unittest"
+DOCKER ?= "irills/helm-unittest"
 
 .PHONY: install
 install: build test
@@ -24,8 +25,14 @@ build:
 test:
 	go test -v -ldflags $(LDFLAGS) ./unittest/
 
+.PHONY: check
+check:
+ifneq "$(VERSION)" "$(GIT_VERSION:v%=%)"
+	$(error Plugin yaml version [v$(VERSION)] does not match git tag version [$(GIT_VERSION)])
+endif
+
 .PHONY: dist
-dist:
+dist: check
 	mkdir -p $(DIST)
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o helm-unittest -ldflags $(LDFLAGS) ./main.go
 	tar -zcvf $(DIST)/helm-unittest-linux-$(VERSION).tgz helm-unittest README.md LICENSE plugin.yaml

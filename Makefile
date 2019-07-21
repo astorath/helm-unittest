@@ -27,8 +27,14 @@ test:
 
 .PHONY: check
 check:
+gofmt := $(shell gofmt -l . 2>&1)
+ifneq ($(strip $(gofmt)),)
+$(error gofmt have found errors in $(gofmt))
+endif
+ifneq ($(strip $(GIT_VERSION)),)
 ifneq "$(VERSION)" "$(GIT_VERSION:v%=%)"
-	$(error Plugin yaml version [v$(VERSION)] does not match git tag version [$(GIT_VERSION)])
+$(error Plugin yaml version [v$(VERSION)] does not match git tag version [$(GIT_VERSION)])
+endif
 endif
 
 .PHONY: dist

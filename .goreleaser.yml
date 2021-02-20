@@ -1,0 +1,26 @@
+# Configuration file for http://goreleaser.com
+
+before:
+  hooks:
+    - ./update_version.sh
+
+builds:
+  - goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+      - GO111MODULE=on
+      # - GOFLAGS=-mod=vendor
+
+archives:
+  - files:
+      - README.md
+      - helm-plugin.yaml
+
+changelog:
+  sort: asc

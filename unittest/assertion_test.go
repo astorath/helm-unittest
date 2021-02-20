@@ -3,9 +3,9 @@ package unittest_test
 import (
 	"testing"
 
-	. "github.com/lrills/helm-unittest/unittest"
-	"github.com/lrills/helm-unittest/unittest/common"
-	"github.com/lrills/helm-unittest/unittest/snapshot"
+	. "github.com/astorath/helm3-unittest/unittest"
+	"github.com/astorath/helm3-unittest/unittest/common"
+	"github.com/astorath/helm3-unittest/unittest/snapshot"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 )

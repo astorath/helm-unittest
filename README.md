@@ -1,13 +1,9 @@
-# helm unittest
+# Unit Test plugin for Helm 3
 
-Unit test for *helm chart* in YAML to keep your chart consistent and robust!
+[![Release Status](https://github.com/astorath/helm3-unittest/workflows/release/badge.svg)](https://github.com/astorath/helm3-unittest/actions?query=workflow%3Arelease)
+[![Latest Release](https://img.shields.io/github/v/release/astorath/helm3-unittest)](https://github.com/astorath/helm3-unittest/releases)
 
-Feature:
-  - write test file in pure YAML
-  - render locally with no need of *tiller*
-  - create **nothing** on your cluster
-  - [define values and release options](./DOCUMENT.md#test-job)
-  - [snapshot testing](#snapshot-testing)
+This is a fork of <https://github.com/lrills/helm-unittest> for Helm 3.
 
 ## Documentation
 
@@ -27,7 +23,7 @@ If you are ready for writing tests, check the [DOCUMENT](./DOCUMENT.md) for the 
 ## Install
 
 ```
-$ helm plugin install https://gitlab.3adigital.ru/gitlab-ci/helm-unittest
+$ helm plugin install https://github.com/astorath/helm3-unittest
 ```
 
 It will install the latest version of binary into helm plugin directory.
@@ -152,28 +148,3 @@ And there are some other helm commands you might want to use:
 ## License
 
 MIT
-
-## Contributing
-
-Issues and PRs are welcome!  
-Before start developing this plugin, you must have [go](https://golang.org/doc/install) and [dep](https://github.com/golang/dep#installation) installed, and run:
-
-```
-git clone git@github.com:lrills/helm-unittest.git
-cd helm-unittest
-dep ensure
-```
-
-And please make CI passed when request a PR which would check following things:
-
-- `dep status` passed. Make sure you run `dep ensure` if new dependencies added.
-- `gofmt` no changes needed. Please run `gofmt -w -s` before you commit.
-- `go test ./unittest/...` passed.
-
-In some cases you might need to manually fix the tests in `*_test.go`. If the snapshot tests (of the plugin's test code) failed you need to run:
-
-```
-UPDATE_SNAPSHOTS=true go test ./unittest/...
-```
-
-This update the snapshot cache file and please add them before you commit.

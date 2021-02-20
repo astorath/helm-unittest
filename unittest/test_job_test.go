@@ -5,13 +5,13 @@ import (
 	"io/ioutil"
 	"testing"
 
+	. "github.com/astorath/helm3-unittest/unittest"
+	"github.com/astorath/helm3-unittest/unittest/snapshot"
 	"github.com/bradleyjkemp/cupaloy/v2"
-	. "github.com/lrills/helm-unittest/unittest"
-	"github.com/lrills/helm-unittest/unittest/snapshot"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 
-	"k8s.io/helm/pkg/chartutil"
+	"helm.sh/helm/v3/pkg/chart/loader"
 )
 
 func TestUnmarshalableJobFromYAML(t *testing.T) {
@@ -54,7 +54,7 @@ asserts:
 }
 
 func TestRunJobOk(t *testing.T) {
-	c, _ := chartutil.Load("../__fixtures__/basic")
+	c, _ := loader.Load("../__fixtures__/basic")
 	manifest := `
 it: should work
 asserts:
@@ -81,7 +81,7 @@ asserts:
 }
 
 func TestRunJobWithAssertionFail(t *testing.T) {
-	c, _ := chartutil.Load("../__fixtures__/basic")
+	c, _ := loader.Load("../__fixtures__/basic")
 	manifest := `
 it: should work
 asserts:
@@ -108,7 +108,7 @@ asserts:
 }
 
 func TestRunJobWithValueSet(t *testing.T) {
-	c, _ := chartutil.Load("../__fixtures__/basic")
+	c, _ := loader.Load("../__fixtures__/basic")
 	manifest := `
 it: should work
 set:
@@ -133,7 +133,7 @@ asserts:
 }
 
 func TestRunJobWithValuesFile(t *testing.T) {
-	c, _ := chartutil.Load("../__fixtures__/basic")
+	c, _ := loader.Load("../__fixtures__/basic")
 	manifest := `
 it: should work
 values:
@@ -161,7 +161,7 @@ asserts:
 }
 
 func TestRunJobWithReleaseSetting(t *testing.T) {
-	c, _ := chartutil.Load("../__fixtures__/basic")
+	c, _ := loader.Load("../__fixtures__/basic")
 	manifest := `
 it: should work
 release:

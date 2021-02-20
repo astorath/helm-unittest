@@ -1,6 +1,6 @@
-package main // github.com/lrills/helm-unittest
+package main // github.com/astorath/helm3-unittest
 import (
-	"github.com/lrills/helm-unittest/unittest"
+	"github.com/astorath/helm3-unittest/unittest"
 )
 
 var version string

@@ -1,7 +1,9 @@
 _scratch
 tpl
-vendor/
 _dist/
+dist/
+bin/
+helm3-unittest
 
 helm-unittest
 helm-unittest.exe
@@ -37,3 +39,5 @@ node_modules/
 
 ### MACOS ###
 .DS_Store
+
+helm-plugin.yaml

@@ -1,6 +1,6 @@
 module github.com/vbehar/helm3-unittest
 
-go 1.14
+go 1.15
 
 require (
 	github.com/bradleyjkemp/cupaloy v2.3.0+incompatible

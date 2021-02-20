@@ -1,4 +1,4 @@
-ARG autotag_version=v1
+ARG autotag_version=v1.3
 FROM quay.io/pantheon-public/autotag:${autotag_version}
 
 LABEL "com.github.actions.name"="autotag"

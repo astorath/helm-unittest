@@ -7,7 +7,7 @@ import (
 
 	. "github.com/astorath/helm3-unittest/unittest"
 	"github.com/astorath/helm3-unittest/unittest/snapshot"
-	"github.com/bradleyjkemp/cupaloy"
+	"github.com/bradleyjkemp/cupaloy/v2"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 

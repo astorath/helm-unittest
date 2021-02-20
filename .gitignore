@@ -4,8 +4,40 @@ _dist/
 dist/
 bin/
 helm3-unittest
+
+helm-unittest
+helm-unittest.exe
 _dist
 
+### VS CODE ###
+.vscode/
+
+### VISUAL STUDIO ###
+.vs/
+
+### PYTHON ###
+.venv/
+*.pyc
+
+### JAVA ###
+.gradle
+/build/
+/out/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NPM ###
+node_modules/
+
+### SECRETS ###
+.env
+.git_credentials
+
+### MACOS ###
 .DS_Store
 
 helm-plugin.yaml

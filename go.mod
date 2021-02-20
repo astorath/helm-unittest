@@ -3,7 +3,7 @@ module github.com/astorath/helm3-unittest
 go 1.15
 
 require (
-	github.com/bradleyjkemp/cupaloy v2.3.0+incompatible
+	github.com/bradleyjkemp/cupaloy/v2 v2.6.0
 	github.com/fatih/color v1.7.0
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/pmezard/go-difflib v1.0.0
